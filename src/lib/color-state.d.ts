@@ -37,6 +37,13 @@ export type UpdateHSVColorAction = {
   };
 };
 
+export type UpdateCMYKColorAction = {
+  type: 'update-cmyk-color';
+  payload: {
+    cmyk: [number, number, number, number];
+  };
+};
+
 export type ColorState = {
   hexColor: string;
 };
@@ -45,4 +52,5 @@ export type ColorActions =
   | UpdateHexColorAction
   | UpdateRGBColorAction
   | UpdateHSLColorAction
-  | UpdateHSVColorAction;
+  | UpdateHSVColorAction
+  | UpdateCMYKColorAction;

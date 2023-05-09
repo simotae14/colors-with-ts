@@ -1,4 +1,4 @@
-import { rgb, hsl, hsv } from 'color-convert';
+import { rgb, hsl, hsv, cmyk } from 'color-convert';
 import { ColorActions, ColorState } from './lib/color-state';
 
 export const initialState: ColorState = {
@@ -35,6 +35,14 @@ const colorReducer = (
 
   if (action.type === 'update-hsv-color') {
     const hexColor = `#${hsv.hex(action.payload.hsv)}`;
+    return {
+      ...state,
+      hexColor,
+    };
+  }
+
+  if (action.type === 'update-cmyk-color') {
+    const hexColor = `#${cmyk.hex(action.payload.cmyk)}`;
     return {
       ...state,
       hexColor,
