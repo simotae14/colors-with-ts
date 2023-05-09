@@ -23,8 +23,18 @@ export type UpdateRGBColorAction = {
   };
 };
 
+export type UpdateHSLColorAction = {
+  type: 'update-hsl-color';
+  payload: {
+    hsl: [number, number, number];
+  };
+};
+
 export type ColorState = {
   hexColor: string;
 };
 
-export type ColorActions = UpdateHexColorAction | UpdateRGBColorAction;
+export type ColorActions =
+  | UpdateHexColorAction
+  | UpdateRGBColorAction
+  | UpdateHSLColorAction;
