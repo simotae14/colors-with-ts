@@ -30,6 +30,13 @@ export type UpdateHSLColorAction = {
   };
 };
 
+export type UpdateHSVColorAction = {
+  type: 'update-hsv-color';
+  payload: {
+    hsv: [number, number, number];
+  };
+};
+
 export type ColorState = {
   hexColor: string;
 };
@@ -37,4 +44,5 @@ export type ColorState = {
 export type ColorActions =
   | UpdateHexColorAction
   | UpdateRGBColorAction
-  | UpdateHSLColorAction;
+  | UpdateHSLColorAction
+  | UpdateHSVColorAction;
