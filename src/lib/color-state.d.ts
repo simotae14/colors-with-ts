@@ -1,3 +1,14 @@
+type HexColor = `#${string}`;
+
+type RGBString = `rgb(${number}, ${number}, ${number})`;
+
+type ColorFormats = 'rgb' | 'hex' | 'hsl' | 'hsv';
+type ActionTypes = `update-${ColorFormats}-color`;
+
+const isHexColor = (s: string): s is HexColor => {
+  return s.startsWith('#');
+};
+
 export type UpdateHexColorAction = {
   type: 'update-hex-color';
   payload: {
