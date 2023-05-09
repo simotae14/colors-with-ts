@@ -22,7 +22,7 @@ const Application = () => {
         }
       />
       <AdjustColors dispatch={dispatch} hexColor={hexColor} />
-      <RelatedColors hexColor={hexColor} />
+      <RelatedColors dispatch={dispatch} hexColor={hexColor} />
       <SavedColors dispatch={dispatch} hexColor={hexColor} />
     </div>
   );
