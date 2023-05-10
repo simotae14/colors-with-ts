@@ -12,6 +12,16 @@ export const [useColorContext, ContextProvider] = createContext<ColorContextStat
 
 export const useContext = useColorContext;
 
+export const useHexColor = () => {
+  const { hexColor } = useColorContext();
+  return hexColor;
+}
+
+export const useDispatch = () => {
+  const { dispatch } = useColorContext();
+  return dispatch;
+}
+
 export const ColorProvider = ({ children }: PropsWithChildren)  => {
   const [state, dispatch] = useReducer(colorReducer, initialState);
   const hexColor = state.hexColor;
